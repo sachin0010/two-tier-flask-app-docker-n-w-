@@ -1,4 +1,9 @@
- 
+<img width="1916" height="964" alt="image" src="https://github.com/user-attachments/assets/a8d76fd0-88c5-4f0d-b729-5229df13ca57" /> 
+
+#Frontend and Backend connected with DB
+<img width="647" height="304" alt="image" src="https://github.com/user-attachments/assets/1b5f6bc2-532d-4c98-8965-fe01a3610656" />
+
+
 # Flask App with MySQL Docker Setup
 
 This is a simple Flask app that interacts with a MySQL database. The app allows users to submit messages, which are then stored in the database and displayed on the frontend.
