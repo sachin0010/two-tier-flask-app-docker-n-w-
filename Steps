@@ -1,0 +1,7 @@
+docker network create two-tier -d bridge
+docker network ls
+docker run -d --name mysql --network two-tier -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=devops mysql
+
+#devops db creted in mysql container
+docker run -d -p 5000:5000 --network two-tier -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DB=devops two-tier:latest
+docker network inspect two-tier
