@@ -1,3 +1,5 @@
+##Network and Volume##   
+
 docker network create two-tier -d bridge
 docker network ls
 docker run -d --name mysql --network two-tier -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=devops mysql
@@ -5,3 +7,15 @@ docker run -d --name mysql --network two-tier -e MYSQL_ROOT_PASSWORD=root -e MYS
 #devops db creted in mysql container
 docker run -d -p 5000:5000 --network two-tier -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DB=devops two-tier:latest
 docker network inspect two-tier
+###############################################################################################################################################
+#docker-volume
+#1Named volume
+docker volume create mysql-data
+cd /var/lib/docker/volumes/mysql-data/_data
+docker run -d -p 5000:5000 --network two-tier -v mysql-data:/var/lib/mysql -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DB=devops two-tier:latest
+docker volume inspect mysql-data
+cd /var/lib/docker/volumes/mysql-data/_data    ##data will secure here
+
+#2Path based volume
+mkdir mysql
+docker run -d -p 5000:5000 --network two-tier -v /home/ubuntu/volumes/mysql:/var/lib/mysql -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DB=devops two-tier:latest
