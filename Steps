@@ -19,3 +19,11 @@ cd /var/lib/docker/volumes/mysql-data/_data    ##data will secure here
 #2Path based volume
 mkdir mysql
 docker run -d -p 5000:5000 --network two-tier -v /home/ubuntu/volumes/mysql:/var/lib/mysql -e MYSQL_HOST=mysql -e MYSQL_USER=root -e MYSQL_PASSWORD=root -e MYSQL_DB=devops two-tier:latest
+
+
+#using docker-compose#
+docker compose build	fast build (use cache- sometim skips pip install)
+docker compose build --no-cache	slow but clean build (  base image pull, pip install again, full fresh build)
+docker compose down -v
+docker compose build --no-cache
+docker compose up
