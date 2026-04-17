@@ -3,6 +3,11 @@
 #Frontend and Backend connected with DB
 <img width="647" height="304" alt="image" src="https://github.com/user-attachments/assets/1b5f6bc2-532d-4c98-8965-fe01a3610656" />
 
+#With Docker Compose
+<img width="1510" height="440" alt="image" src="https://github.com/user-attachments/assets/22195311-77c7-4c60-a6a1-16f642e00020" />
+
+<img width="1915" height="831" alt="image" src="https://github.com/user-attachments/assets/01ae490a-7ac8-456d-8246-12405c538ae7" />
+
 
 # Flask App with MySQL Docker Setup
 
